@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("=== Palindrome Checker App (UC4) ===");
@@ -37,4 +36,6 @@ public class PalindromeCheckerApp {
 
         scanner.close();
     }
-}
+    }
+
+
