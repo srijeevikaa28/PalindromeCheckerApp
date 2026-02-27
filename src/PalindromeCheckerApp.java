@@ -1,30 +1,40 @@
+import java.util.Scanner;
+
 public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
-        // UC2: Hardcoded Palindrome Check
-        // -------------------------------
+        Scanner scanner = new Scanner(System.in);
 
-        // Hardcoded String Literal
-        String word = "madam";
+        System.out.println("=== Palindrome Checker App (UC4) ===");
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
 
-        // Variable to store reversed string
-        String reversed = "";
+        // Convert string to character array
+        char[] characters = input.toCharArray();
 
-        // Reverse the string
-        for (int i = word.length() - 1; i >= 0; i--) {
-            reversed = reversed + word.charAt(i);
+        int start = 0;
+        int end = characters.length - 1;
+        boolean isPalindrome = true;
+
+        // Two-pointer comparison
+        while (start < end) {
+            if (characters[start] != characters[end]) {
+                isPalindrome = false;
+                break;
+            }
+            start++;
+            end--;
         }
 
-        // Check Palindrome using if-else
-        if (word.equals(reversed)) {
-            System.out.println("The given string \"" + word + "\" is a Palindrome.");
+        // Display result
+        if (isPalindrome) {
+
+            System.out.println("Result: The given string is a Palindrome.");
         } else {
-            System.out.println("The given string \"" + word + "\" is NOT a Palindrome.");
+            System.out.println("Result: The given string is NOT a Palindrome.");
         }
 
-        System.out.println("-----------------------------------------------");
-        System.out.println("PROGRAM TERMINATED SUCCESSFULLY");
+        scanner.close();
     }
 }
-
